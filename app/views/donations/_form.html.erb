@@ -1,0 +1,14 @@
+<%= simple_form_for(@donation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%=  select_tag :member, options_from_collection_for_select(Member.all, "id", "full_name")      %>  <br/>
+    <%= f.input number_to_currency :amount %><br/>
+    <%= f.input :date_given %>  <br/>
+    <%= f.input :donation_type %>    <br/>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

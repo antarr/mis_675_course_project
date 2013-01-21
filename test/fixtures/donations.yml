@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  member: 
+  amount: 9.99
+  date_given: 2012-11-21
+  donation_type: MyString
+
+two:
+  member: 
+  amount: 9.99
+  date_given: 2012-11-21
+  donation_type: MyString

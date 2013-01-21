@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Member:</b>
+  <%= @donation.member.full_name %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= number_to_currency @donation.amount %>
+</p>
+
+<p>
+  <b>Date given:</b>
+  <%= time_tag @donation.date_given.to_date %>
+</p>
+
+<p>
+  <b>Donation type:</b>
+  <%= @donation.donation_type %>
+</p>
+
+<%= link_to 'Back', donations_path %>

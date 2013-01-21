@@ -1,0 +1,26 @@
+<h3>Members Report</h3>
+
+<div class="left">
+  <%= form_for @member_report, :html => {:method => :get} do |f| -%>
+      <% @member_report.filters.each do |filter| -%>
+          <div class="filter">
+            <%= f.datagrid_label filter %>
+            <%= f.datagrid_filter filter %>
+          </div>
+          <div class="clear"></div>
+      <% end -%>
+
+      <div class="filter">
+        <%= f.submit 'Apply Filter' %>
+      </div>
+      <div class="clear"></div>
+  <% end -%>
+
+
+
+  <div class='total'>Total: <%= @member_report.assets.count %></div>
+  <%= datagrid_table(@member_report, @assets) %>
+  <%= paginate @assets %>
+</div>
+
+

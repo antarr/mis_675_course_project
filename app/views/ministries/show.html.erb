@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ministry.name %>
+</p>
+
+<p>
+  <b>Meeting time:</b>
+  <%= @ministry.meeting_time %>
+</p>
+
+<p>
+  <b>Meeting day:</b>
+  <%= @ministry.meeting_day %>
+</p>
+
+<p>
+  <b>Dues collected:</b>
+  <%= @ministry.dues_collected %>
+</p>
+
+<p>
+  <b>Balance available:</b>
+  <%= @ministry.balance_avaialable %>
+</p>
+
+<p>
+  <b>Members:</b>
+</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Position</th>
+  </tr>
+  <% @ministry.members.each do |m| %>
+      <tr>
+        <td><%= m.full_name %></td>
+        <td><%= 'Member' %></td>
+      </tr>
+  <% end %>
+</table>
+<%= @ministry.balance_avaialable %>

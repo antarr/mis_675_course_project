@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @event.name %>
+</p>
+
+<p>
+  <b>Estimated cost:</b>
+  <%= number_to_currency @event.estimated_cost %>
+</p>
+
+<p>
+  <b>Actual cost:</b>
+  <%= number_to_currency @event.actual_cost %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @event.comments %>
+</p>
+
+<p>
+  Volunteers:
+<ul>
+
+  <% @event.members.each do |member| %>
+      <li>
+        <%= link_to  member.full_name, member %>
+      </li>
+  <% end %>
+
+</ul>
+
+</p>

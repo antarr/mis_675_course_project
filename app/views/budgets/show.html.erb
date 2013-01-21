@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Account:</b>
+  <%= @budget.account %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @budget.name %>
+</p>
+
+<p>
+  <b>Limit:</b>
+  <%= @budget.limit %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @budget.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @budget.end_date %>
+</p>
+
+<p>
+  <b>Allocated amount:</b>
+  <%= @budget.allocated_amount %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @budget.event.name %>
+</p>
+
+<p>
+  <b>Budget Items:</b>
+
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Cost Per</th>
+      <th>Quantity</th>
+      <th>Total Cost</th>
+    </tr>
+    <% @budget.budget_items.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <td><%= item.total_cost/item.quantity %></td>
+      <td><%= item.quantity %></td>
+      <td><%= item.total_cost %></td>
+    </tr>
+    <% end %>
+  </table>
+
+</p>

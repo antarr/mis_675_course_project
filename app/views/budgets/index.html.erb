@@ -1,0 +1,33 @@
+<h1>Listing budgets</h1>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Name</th>
+    <th>Limit</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Allocated amount</th>
+    <th>Event</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @budgets.each do |budget| %>
+  <tr>
+    <td><%= budget.account %></td>
+    <td><%= budget.name %></td>
+    <td><%= budget.limit %></td>
+    <td><%= budget.start_date %></td>
+    <td><%= budget.end_date %></td>
+    <td><%= budget.allocated_amount %></td>
+    <td><%= budget.event.name %></td>
+    <td><%= link_to 'Show', budget %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Budget', new_budget_path %>

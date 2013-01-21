@@ -1,0 +1,17 @@
+<%= simple_form_for(@budget) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :account %>
+    <%= f.input :name %>
+    <%= f.input :limit %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :allocated_amount %>
+    <%= f.association :event %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,62 @@
+<%= form_for(@member) do |f| %>
+    <% if @member.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+          <ul>
+            <% @member.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :first_name %>
+      <br/>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %>
+      <br/>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :address %>
+      <br/>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label :city %>
+      <br/>
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label :state %>
+      <br/>
+      <%= f.select(:state, options_for_select(
+              ['AL', 'AK', 'AZ', 'AR','CA','CO','CT','DE','DC','FM','FL','GA','GU','HI','ID','IL','IN','IA','KS','KY',
+               'LA', 'ME','MH','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR',
+               'PW','PA','PR','RI','SC','SD','TN','TX','UT','VT','VI', 'VA','WA','WV','WI','WY'])
+          )
+      %>
+    </div>
+    <div class="field">
+      <%= f.label :zipcode %>
+      <br/>
+      <%= f.text_field :zipcode %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_number %>
+      <br/>
+      <%= f.telephone_field :phone_number %>
+    </div>
+    <div class="field">
+      <%= f.label :email %>
+      <br/>
+      <%= f.email_field :email %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

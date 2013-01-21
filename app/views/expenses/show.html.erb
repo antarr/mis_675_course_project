@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @expense.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @expense.description %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= number_to_currency @expense.amount %>
+</p>
+
+<p>
+  <b>Account:</b>
+  <%= @expense.account.name %>  <%= @expense.account.account_number %>
+</p>
+<p>
+  <b>Method of Payment:</b>
+  <%= @expense.payment_method %>
+</p>
+<p>
+  <b>Vendor:</b>
+  <%= link_to(@expense.vendor.full_name, @expense.vendor) %>
+</p>

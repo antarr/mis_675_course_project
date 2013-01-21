@@ -1,0 +1,31 @@
+<h1>Listing expenses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Account</th>
+    <th>Method of Payment</th>
+    <th>Date</th>
+    <th>Vendor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%=  paginate @expenses %>
+<% @expenses.each do |expense| %>
+  <tr>
+    <td><%= expense.name %></td>
+    <td><%= number_to_currency expense.amount %></td>
+    <td><%= expense.account.name %></td>
+    <td><%= expense.payment_method %></td>
+    <td><%= time_tag expense.date_of.to_date %></td>
+    <td><%= expense.vendor.full_name %></td>
+    <td><%= link_to 'Show', expense %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expense', new_expense_path %>

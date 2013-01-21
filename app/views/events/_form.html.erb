@@ -1,0 +1,14 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input number_to_currency :estimated_cost %>
+    <%= f.input number_to_currency :actual_cost %>
+    <%= f.input :comments %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

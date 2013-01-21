@@ -1,0 +1,27 @@
+<h1>Listing donations</h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Amount</th>
+    <th>Date given</th>
+    <th>Donation type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @donations.each do |donation| %>
+  <tr>
+    <td><%= donation.member.first_name %> &nbsp;&nbsp;  <%= donation.member.last_name %></td>
+    <td><%= number_to_currency(donation.amount) %></td>
+    <td><%= time_tag donation.date_given.to_date %></td>
+    <td><%= donation.donation_type %></td>
+    <td><%= link_to 'Show', donation %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Donation', new_donation_path %>

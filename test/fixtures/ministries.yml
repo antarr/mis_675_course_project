@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  meeting_time: MyString
+  meeting_day: MyString
+  dues_collected: 9.99
+  balance_avaialable: 9.99
+
+two:
+  name: MyString
+  meeting_time: MyString
+  meeting_day: MyString
+  dues_collected: 9.99
+  balance_avaialable: 9.99

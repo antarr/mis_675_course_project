@@ -1,0 +1,27 @@
+<h1>Listing budget_items</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Cost per</th>
+    <th>Quantity</th>
+    <th>Budget</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @budget_items.each do |budget_item| %>
+  <tr>
+    <td><%= budget_item.title %></td>
+    <td><%= budget_item.cost_per %></td>
+    <td><%= budget_item.quantity %></td>
+    <td><%= budget_item.budget %></td>
+    <td><%= link_to 'Show', budget_item %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Budget item', new_budget_item_path %>

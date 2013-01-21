@@ -1,0 +1,28 @@
+<h1>Listing vendors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.name %></td>
+    <td><%= vendor.address %></td>
+    <td><%= vendor.city %></td>
+    <td><%= vendor.state %></td>
+    <td><%= vendor.zipcode %></td>
+    <td><%= link_to 'Show', vendor %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

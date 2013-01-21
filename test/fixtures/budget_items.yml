@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  cost_per: 9.99
+  quantity: 1
+  budget: 
+
+two:
+  title: MyString
+  cost_per: 9.99
+  quantity: 1
+  budget: 

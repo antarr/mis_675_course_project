@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @vendor.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @vendor.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @vendor.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @vendor.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @vendor.zipcode %>
+</p>
+<p>
+  <b>Expenses:</b>
+<table>
+  <tr>
+    <td>Expense</td>
+    <td>Amount</td>
+    <td>Date</td>
+  </tr>
+  <% @vendor.expenses.each do |expense| %>
+      <tr>
+        <td><%= link_to(expense.name, expense) %></td>
+        <td><%= number_to_currency expense.amount %></td>
+        <td><%= time_tag expense.date_of.to_date %></td>
+      <tr>
+  <% end %>
+</table>
+<%= @vendor.zipcode %>
+</p>

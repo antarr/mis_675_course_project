@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @account.name %>
+</p>
+
+<p>
+  <b>Account number:</b>
+  <%= @account.account_number %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= number_to_currency @account.balance %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @account.comments %>
+</p>
+<p>
+  <b>Expense:</b>
+<%= paginate @expenses %>
+<table>
+  <tr>
+    <th>Expense</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+
+  <% @expenses.each do |e| %>
+      <tr>
+        <td><%= link_to e.name, e %> </td>
+        <td><%= number_to_currency e.amount %></td>
+        <td><%= time_tag e.date_of.to_date %></td>
+      </tr>
+  <% end %>
+</table>
+
+</p>
