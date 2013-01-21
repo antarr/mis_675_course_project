@@ -22,5 +22,5 @@ development:
   host: localhost
   port: 1521
   database: xe
-  username: atbyrd
-  password: n0vember
+  username: <database user>
+  password: <password for database user>
